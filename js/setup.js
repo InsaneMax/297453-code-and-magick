@@ -53,23 +53,17 @@ var getRandomElemFromArray = function (arr) {
 var getRandomWizards = function (numberOfWizards) {
   var randomWizards = [];
   for (var i = 0; i < numberOfWizards; i++) {
-    var randomFirstName = getRandomElemFromArray(firstNames);
-    var randomLastName = getRandomElemFromArray(lastNames);
-    var randomCoatColor = getRandomElemFromArray(coatColors);
-    var randomEyesColor = getRandomElemFromArray(eyesColors);
-    var randomWizard = {
-      name: randomFirstName + '' + randomLastName,
-      coatColor: randomCoatColor,
-      eyesColors: randomEyesColor
-    };
-    randomWizards[i] = randomWizard;
+    randomWizards.push({
+      name: getRandomElemFromArray(firstNames) + ' ' + getRandomElemFromArray(lastNames),
+      coatColor: getRandomElemFromArray(coatColors),
+      eyesColors: getRandomElemFromArray(eyesColors)
+    });
   }
   return randomWizards;
 };
 
 var wizards = getRandomWizards(4);
 var similarWizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');
-
 
 var randerWizard = function (wizard) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
