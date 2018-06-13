@@ -65,7 +65,7 @@ var getRandomWizards = function (numberOfWizards) {
 var wizards = getRandomWizards(4);
 var similarWizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');
 
-var randerWizard = function (wizard) {
+var createWizardElement = function (wizard) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
   wizardElement.querySelector('.setup-similar-label').textContent = wizard.name;
   wizardElement.querySelector('.wizard-coat').style.fill = wizard.coatColor;
@@ -73,8 +73,6 @@ var randerWizard = function (wizard) {
   return wizardElement;
 };
 
-var fragment = document.createDocumentFragment();
 for (var i = 0; i < wizards.length; i++) {
-  fragment.appendChild(randerWizard(wizards[i]));
-  similarList.appendChild(fragment);
+  similarList.appendChild(createWizardElement(wizards[i]));
 }
