@@ -157,3 +157,21 @@ fireBall.addEventListener('click', function () {
   fireBall.style.background = getRandomElemFromArray(fireballColors);
 });
 
+
+var setupPlayer = document.querySelector('.setup-player');
+var setupInput = setupPlayer.querySelector('input');
+var setupFireballInput = fireBall.querySelector('input');
+
+// if (setupInput.name === 'coat-color') {
+//   setupInput.value = getRandomElemFromArray(coatColors);
+// }
+
+if (setupInput.name === 'eyes-color') {
+  setupInput.value = pink;
+}
+
+console.log(setupInput.value)
+
+if (setupFireballInput.name === 'fireball-color') {
+  setupFireballInput.value = getRandomElemFromArray(fireballColors);
+}
