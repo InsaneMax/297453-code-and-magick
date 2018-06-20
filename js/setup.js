@@ -148,16 +148,20 @@ var wizardCoat = document.querySelector('.setup-wizard .wizard-coat');
 var wizardEyes = document.querySelector('.setup-wizard .wizard-eyes');
 var fireBall = document.querySelector('.setup-fireball-wrap');
 
+var colorCoat = getRandomElemFromArray(coatColors);
+var colorEyes = getRandomElemFromArray(eyesColors);
+var colorFireball = getRandomElemFromArray(fireballColors);
+
 wizardCoat.addEventListener('click', function () {
-  wizardCoat.style.fill = getRandomElemFromArray(coatColors);
+  wizardCoat.style.fill = colorCoat;
 });
 
 wizardEyes.addEventListener('click', function () {
-  wizardEyes.style.fill = getRandomElemFromArray(eyesColors);
+  wizardEyes.style.fill = colorEyes;
 });
 
 fireBall.addEventListener('click', function () {
-  fireBall.style.background = getRandomElemFromArray(fireballColors);
+  fireBall.style.background = colorFireball;
 });
 
 var setupPlayer = document.querySelector('.setup-player');
@@ -165,6 +169,6 @@ var inputFirst = setupPlayer.querySelector('input');
 var inputLast = setupPlayer.querySelector('input:last-child');
 var fireBallInput = setupPlayer.querySelector('.setup-fireball-wrap input');
 
-inputFirst.value = getRandomElemFromArray(coatColors);
-inputLast.value = getRandomElemFromArray(eyesColors);
-fireBallInput.value = getRandomElemFromArray(fireballColors);
+inputFirst.value = colorCoat;
+inputLast.value = colorEyes;
+fireBallInput.value = colorFireball;
