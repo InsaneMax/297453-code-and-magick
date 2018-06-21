@@ -148,27 +148,25 @@ var wizardCoat = document.querySelector('.setup-wizard .wizard-coat');
 var wizardEyes = document.querySelector('.setup-wizard .wizard-eyes');
 var fireBall = document.querySelector('.setup-fireball-wrap');
 
-var colorCoat = getRandomElemFromArray(coatColors);
-var colorEyes = getRandomElemFromArray(eyesColors);
-var colorFireball = getRandomElemFromArray(fireballColors);
-
 wizardCoat.addEventListener('click', function () {
+  var colorCoat = getRandomElemFromArray(coatColors);
   wizardCoat.style.fill = colorCoat;
+  inputFirst.value = colorCoat;
 });
 
 wizardEyes.addEventListener('click', function () {
+  var colorEyes = getRandomElemFromArray(eyesColors);
   wizardEyes.style.fill = colorEyes;
+  inputLast.value = colorEyes;
 });
 
 fireBall.addEventListener('click', function () {
+  var colorFireball = getRandomElemFromArray(fireballColors);
   fireBall.style.background = colorFireball;
+  fireBallInput.value = colorFireball;
 });
 
 var setupPlayer = document.querySelector('.setup-player');
 var inputFirst = setupPlayer.querySelector('input');
 var inputLast = setupPlayer.querySelector('input:last-child');
 var fireBallInput = setupPlayer.querySelector('.setup-fireball-wrap input');
-
-inputFirst.value = colorCoat;
-inputLast.value = colorEyes;
-fireBallInput.value = colorFireball;
